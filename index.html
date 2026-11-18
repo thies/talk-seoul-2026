@@ -1,0 +1,259 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Who Holds the Keys? AI, Power and Blind Spots in Property Markets</title>
+
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reset.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/theme/white.css">
+		<link rel="stylesheet" href="tweaks.css">
+		<style>
+			.reveal h2 { text-transform: none; }
+			.todo { color: #b04a00; font-style: italic; }
+			.reveal blockquote.quote { font-size: 0.6em; width: 85%; margin: 0.5em auto; padding: 0.6em 1em; text-align: left; font-style: italic; background: #f4f4f2; border-left: 6px solid #e8250c; box-shadow: none; }
+			.reveal blockquote.quote .attribution { display: block; margin-top: 0.4em; font-style: normal; font-size: 0.8em; color: #52514e; text-align: right; }
+			.reveal blockquote.quote .attribution::before { content: "— "; }
+			.reveal table { font-size: 0.6em; }
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+			<!-- 20 minutes: title, 1 intro, 3 slides per part, 1 outro. Draft from talk.md, 18 Nov 2026. -->
+
+
+			<!-- TITLE -->
+			<section data-background-image="imgs/title-bg.jpg">
+				<h2 style="line-height: 0.8em;"><span class="transparent70">Who Holds the Keys?</span><span class="subtitle transparent70"><br /><br>AI, Power and Blind Spots in Property Markets</span></h2>
+				<p style="font-size: 0.8em; margin-top: 1.4em;"><span class="transparent70">Prof Thies Lindenthal
+					<br />University of Cambridge
+					<br /><a href="mailto:htl24@cam.ac.uk">htl24@cam.ac.uk</a>
+					<br />
+					<br />11th International Forum on Housing and Urban Finance, Seoul, November 2026</span></p>
+			</section>
+
+
+			<!-- ======================= INTRO (talk.md 0.1–0.3) ======================= -->
+
+			<section data-markdown>
+				<textarea data-template>
+					## AI is shaping property markets<span class="subtitle"><br/>And my daily work: emails, proposals, code and reviews</span>
+					* Algorithms arrived long before generative AI
+						* Platforms match buyers and sellers, pricing software recommends rents every day
+						* RealPage: software could help landlords “outperform the market 3% to 7%” ([ProPublica, 2022](https://www.propublica.org/article/yieldstar-rent-increase-realpage-rent))
+					* What happens when we delegate decisions to systems that change who has information, who influences choices, and what gets noticed?
+					* Who holds the keys? Three places where this matters:
+
+					<ol style="margin:0 0 0 2.2em;">
+						<li style="margin-bottom:0.3em;"><strong>Algorithmic pricing and market power</strong></li>
+						<li style="margin-bottom:0.3em;"><strong>Testing AI systems</strong></li>
+						<li style="margin-bottom:0.3em;"><strong>AI and the research agenda</strong></li>
+					</ol>
+					Note:
+					Talk.md 0.1–0.3. Start with the student emails (“I hope this finds you well …”), then the market. This is not a Luddite’s rant.
+				</textarea>
+			</section>
+
+
+			<!-- ================= PART 1 (talk.md 1.1–1.4) ================= -->
+
+			<!-- 1.1 -->
+			<section data-markdown>
+				<textarea data-template>
+					## 1. Better predictions: winners and losers<span class="subtitle"><br/>Better models impact households unevenly. Overall, more access to finance</span>
+					* Fuster, Goldsmith-Pinkham, Ramadorai &amp; Walther (2022), “<a href="https://doi.org/10.1111/jofi.13090">Predictably Unequal? The Effects of Machine Learning on Credit Markets</a>”, <i>Journal of Finance</i>
+						* US mortgage lenders switch from a logit model to machine learning to predict default
+						* The more accurate model spreads predictions out: some borrowers look less risky, others more risky
+						* White and Asian borrowers tend to gain; Black and Hispanic borrowers are disproportionately less likely to gain
+						* Interest rates become more unequal, slightly more borrowers may get credit
+					* Better prediction does not systematically favour lenders
+					Note:
+					Talk.md 1.1. Both winners and losers are households.
+				</textarea>
+			</section>
+
+			<!-- 1.2 -->
+			<section data-markdown>
+				<textarea data-template>
+					## New platforms shift the balance of power<span class="subtitle"><br/>“<a href="https://www.propublica.org/article/yieldstar-rent-increase-realpage-rent">We said there’s way too much empathy going on here.</a>” (a RealPage customer)</span>
+					* Landlords send RealPage their lease data; RealPage adds the rest of the market and sends back an “optimal” rent
+					* By 2019: about 30% of units in US buildings with 20+ units
+					* Calder-Wang &amp; Kim, “<a href="https://www.ftc.gov/system/files/ftc_gov/pdf/calder-wangkim.pdf">Algorithmic Pricing in Multifamily Rentals: Efficiency Gains or Price Coordination?</a>” (working paper, 2026)
+						* Two channels: **responsive pricing** (rents follow the market faster) or **coordination** (prices maximise adopters’ *joint* profits)
+						* Booms can’t tell them apart; recessions can. They find both: markup of about $25 per unit per month, on 4.2 million units
+					Note:
+					Talk.md 1.2. In a recession a responsive landlord cuts rent to fill units; a coordinating landlord holds rent and accepts vacancies. The authors do not test for collusion in the legal sense.
+				</textarea>
+			</section>
+
+			<!-- 1.3–1.4 -->
+			<section data-markdown>
+				<textarea data-template>
+					## Antitrust: data pooling and coordination<span class="subtitle"><br/><a href="https://www.justice.gov/atr/case/us-and-plaintiff-states-v-realpage-inc"><i>US et al. v. RealPage</i></a>, M.D.N.C. No. 1:24-cv-00710</span>
+					* Aug 2024: DOJ and eight states sue; landlords share “nonpublic, competitively sensitive data” ([DOJ complaint, 2024](https://www.justice.gov/atr/media/1365471/dl))
+					* Final judgment, 19 May 2026 ([proposed final judgment, 2025](https://www.justice.gov/atr/media/1419451/dl)), restricts other landlords’ data, its freshness (12 months), its geographic detail, and features that keep units empty
+					* Regulation reaches into the design of the model itself
+					* Network economics of data: each additional landlord makes the platform’s information more valuable; tenants cannot see or coordinate in the same way
+					* Ask not only whether algorithms predict accurately, but who controls the data and how the system changes competition
+					Note:
+					Talk.md 1.3–1.4. The network-economics argument is my interpretation.
+				</textarea>
+			</section>
+
+
+			<!-- ================= PART 2 (talk.md 2.1–2.7) ================= -->
+
+			<!-- 2.1–2.2 -->
+			<section data-markdown>
+				<textarea data-template>
+					## 2. Testing AI systems<span class="subtitle"><br/>Do ML systems do what we want, and HOW do they get there?</span>
+					* Wan &amp; Lindenthal (2023), “<a href="https://doi.org/10.1111/1540-6229.12416">Testing Machine Learning Systems in Real Estate</a>”, <i>Real Estate Economics</i>
+						* A model can score well and be right for the wrong reasons
+						* Prediction accuracy and acceptable behaviour are different things. Housing is a regulated environment
+					* Liu et al. (2024), “<a href="https://doi.org/10.1145/3689904.3694709">Racial Steering by Large Language Models: A Prospective Audit of GPT-4 on Housing Recommendations</a>”, <i>EAAMO ’24</i>
+						* GPT-4 recommends neighbourhoods that match the home-seeker’s stated race
+						* No race given: advice looks like advice to White home-seekers, “default whiteness”
+					* Steering is what housing audits were designed to catch in estate agents. Now the adviser could be a chatbot
+					Note:
+					Talk.md 2.1–2.2. Architects’ example: doors, windows, roof shape tell the age of a house; trees and cars should be ignored. The classifier looked at the same things.
+				</textarea>
+			</section>
+
+			<!-- 2.3–2.5 -->
+			<section data-markdown>
+				<textarea data-template>
+					## Social class drives the largest gaps<span class="subtitle"><br/>A quick replication raises further questions</span>
+					* Lindenthal, “<a href="">Social Class, Ethnicity and Migration Status in AI Housing Advice in the UK</a>” (working paper, 2026)
+					* London, Birmingham, Manchester. Customers send a CV and identical finances; class and origin show only through schools, names, languages, places
+					* Same job, same wealth, same income: still models steer households to specific areas
+
+					<table>
+						<thead>
+							<tr><th rowspan="2">Model</th><th colspan="2" style="text-align:center;">Neighbourhood wealth and opportunities (<a href="https://www.gov.uk/government/statistics/english-indices-of-deprivation-2025">deprivation index</a>)</th></tr>
+							<tr><th style="text-align:center;">Working class</th><th style="text-align:center;">Middle class</th></tr>
+						</thead>
+						<tbody>
+							<tr><td>Claude Opus 5.5</td><td style="text-align:center;">4.08</td><td style="text-align:center;">5.15</td></tr>
+							<tr><td>GPT-6 Astra</td><td style="text-align:center;">4.04</td><td style="text-align:center;">4.56</td></tr>
+						</tbody>
+					</table>
+
+					<ul><li style="list-style:none; margin:0;"><ul>
+						<li>Ethnic origin: mostly 0.1 to 0.6 of a decile. Recent migrants told to rent first: +45 points (Claude Opus 5.5), +20 (GPT-6 Astra)</li>
+					</ul></li></ul>
+
+					* A pilot: stereotypes or inferred preferences, not by itself proof of discrimination
+					Note:
+					Talk.md 2.3–2.5. Raw cell means, Block A, no system prompt (output/pilot_s1/baseline.csv). Rent-first gap vs British customers of the same heritage; noisy.
+				</textarea>
+			</section>
+
+			<!-- 2.6–2.7 -->
+			<section data-markdown>
+				<textarea data-template>
+					## The test may shape what it measures<span class="subtitle"><br/>Having seen just ONE prompt, they smelled a rat</span>
+					* Asked why someone sent the message: Claude Opus 5.5 considers a bias test in the majority of prompts
+
+					<blockquote class="quote">
+						“The message is most likely a test of whether the AI’s neighbourhood recommendations are swayed by cues about ethnicity, religion, or national origin […]”
+						<span class="attribution">Claude Opus 5.5</span>
+					</blockquote>
+
+					* Volkswagen’s diesels detected emissions tests ([EPA, 2015](https://www.epa.gov/sites/default/files/2015-10/documents/vw-nov-caa-09-18-15.pdf)). Are we testing ordinary behaviour, or “best behaviour”?
+					Note:
+					Talk.md 2.6–2.7. Reasoning summaries alongside the advice never mention a test, but fairness comes up far more often for Pakistani or Nigerian background customers. Not deliberate deception: guardrails may make models cautious when a prompt looks like an audit.
+				</textarea>
+			</section>
+
+
+			<!-- ================= PART 3 (talk.md 3.1–3.3) ================= -->
+
+			<!-- 3.1 -->
+			<section data-markdown>
+				<textarea data-template>
+					## 3. AI already writes research<span class="subtitle"><br/>LLM indicator words in real estate and housing research, 2010–2025</span>
+					<div class="figure">
+						<img src="imgs/kobak_openalex.png" height="390" />
+						<p class="source">Replication of Kobak et al. (2025), “<a href="https://doi.org/10.1126/sciadv.adt3813">Delving into LLM-assisted writing in biomedical publications through excess vocabulary</a>”, <i>Science Advances</i></p>
+					</div>
+					Note:
+					Talk.md 3.1. My colleagues are “keeping up” too. AI is also a very good research assistant: in the next paper we did not write a single line of code. Researchers use AI for ideas, too.
+				</textarea>
+			</section>
+
+			<!-- 3.2 -->
+			<section data-markdown>
+				<textarea data-template>
+					## AI steers research directions<span class="subtitle"><br/>AI’s view of “Real Estate Finance” differs from academic literature, introducing a bias</span>
+					<div style="display:flex; align-items:center; gap:1.5em;">
+						<div class="figure" style="flex-shrink:0;">
+							<img src="imgs/ideas_umap_a_bare_unconstrained.png" height="480" style="margin:0;" />
+						</div>
+						<ul>
+							<li>Lindenthal, Kalikman &amp; Ruf, “<a href="https://lindenthal.eu/assets/papers/wp-ai-research-agenda.pdf">How AI Shapes the Research Agenda in Real Estate Finance and Economics</a>” (working paper, 2026)</li>
+							<li>6,255 papers in 80 clusters; 3,200 AI research proposals on the same map (red)</li>
+							<li>Climate risk, rent control, property tax, mortgage lending discrimination, again and again</li>
+						</ul>
+					</div>
+					<div class="figure">
+						<img src="imgs/ideas_umap_legend.png" width="800" style="margin:0;" />
+					</div>
+					Note:
+					Talk.md 3.2. The model’s tendency, not proof that researchers have changed their agendas. Speculating: detectable as soon as next year.
+				</textarea>
+			</section>
+
+			<!-- 3.2–3.3 -->
+			<section data-markdown>
+				<textarea data-template>
+					## What gets overlooked<span class="subtitle"><br/>Reproducing fashions, at scale. Blind spots emerge</span>
+					* Citations: Callaway and Sant’Anna’s difference-in-differences estimator comes up for 40 of 200 ideas; the median paper once
+					* Barely registers: mortgage finance, capital markets, institutional real estate
+					* The favoured clusters have been gaining citations for a decade. The model offers fashions back as if they were independent suggestions, and more extreme
+					* A healthy research community needs a range of questions, methods and traditions
+					* Like microplastics: the quiet accumulation of small influences eventually adds up
+					Note:
+					Talk.md 3.2–3.3. Cited papers are model recollections, not a verified bibliography.
+				</textarea>
+			</section>
+
+
+			<!-- ======================= OUTRO (talk.md 4.1–4.3) ======================= -->
+
+			<section data-markdown>
+				<textarea data-template>
+					## Who holds the keys?<span class="subtitle"><br/>Accuracy does not guarantee fairness, competition or diversity</span>
+					* A system can perform its immediate task and still change who has influence
+					* **Pricing:** examine shared information and incentives
+					* **Housing advice:** test the assumptions models make about people and places
+					* **Research:** How can scholars remain in the driver’s seat? Is AI the new gatekeeper?
+					* We can (and have to) shape the institutions, tests and constraints that govern AI’s use
+					Note:
+					Talk.md 4.1–4.3. Thank you. I look forward to your questions.
+				</textarea>
+			</section>
+
+
+			</div>
+		</div>
+
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/markdown/markdown.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/notes/notes.js"></script>
+		<script>
+			Reveal.initialize({
+				transition: "none",
+				width: 1244,
+				height: 700,
+				margin: 0.1,
+				hash: true,
+				slideNumber: true,
+				plugins: [ RevealMarkdown, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
